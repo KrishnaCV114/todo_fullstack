@@ -1,40 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+📝 Multi-User Todo App (Next.js + MySQL)
 
-## Getting Started
+    A full-stack todo application built with Next.js and MySQL, supporting multiple users with authentication.
 
-First, run the development server:
+🌟 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✅ User Authentication (Signup/Login)
+✅ Add, Edit, Delete Todos
+✅ Mark Todos as Completed
+✅ Multi-User Support
+✅ Persistent Storage with MySQL
+✅ API Routes for CRUD Operations
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Technology                      Description
+Next.js                         Frontend & Backend (Full-Stack)
+React                           UI Components
+MySQL                           Database
+MySQL2                          Database Connection
+JWT/Auth.js                     User Authentication (if used)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+/Todo-App
+├── lib/
+│ ├── db.js # MySQL Database Connection
+├── pages/
+│ ├── api/
+│ │ ├── auth.js # User Authentication API
+│ │ ├── todos.js # CRUD API for Todos
+│ ├── index.js # Home Page (Login/Register)
+│ ├── dashboard.js # User Dashboard
+├── components/
+│ ├── TodoItem.js # Todo Card Component
+│ ├── Navbar.js # Navigation Bar
+├── styles/ # Global Styles
+├── README.md # Documentation
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+📡 API Routes
+Method	        Route	                Description
+POST	        /api/auth/signup	    Register a new user
+POST	        /api/auth/login	        Login & get token
+GET	            /api/todos	            Fetch user todos
+POST	        /api/todos	            Create a new todo
+PUT	            /api/todos/:id	        Update a todo
+DELETE	        /api/todos/:id	        Delete a todo
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Getting Started?
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+install dependencies - npm install
 
-## Learn More
+Setup Env Variables
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=yourdatabase
+JWT_SECRET=your-secret-key
 
-To learn more about Next.js, take a look at the following resources:
+👨‍💻 Contributing
+Want to improve this project? Feel free to fork and submit a pull request! 🚀
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+📜 License
+This project is licensed under the MIT License.
