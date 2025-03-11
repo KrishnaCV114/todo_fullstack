@@ -28,14 +28,14 @@ export default async function handler(req, res) {
           process.env.JWT_SECRET,
           { expiresIn: "1h" }
         );
-        const cookieOption = serialize("authToken", token, {
+        const cookie = serialize("authToken", token, {
           httpOnly: true,
           secure: process.env.NODE_ENV === "production",
           sameSite: "strict",
           path: "/",
           maxAge: 3600,
         });
-        res.setHeader("Set-Cookie", cookieOption);
+        res.setHeader("Set-Cookie", cookie);
         return res
           .status(200)
           .json({ message: "Login Successful", token: token });
@@ -48,3 +48,5 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method Not Supported" });
   }
 }
+
+// mysql://root:HMNdrYUUWIqVeGeKoiDDIYXukHcSuKnP@yamabiko.proxy.rlwy.net:41451/railway
